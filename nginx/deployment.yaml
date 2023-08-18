@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name:  nginx
+  labels:
+    name:  nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        name:  nginx
+    spec:
+      containers:
+      - image: glaceroy/nginx:v1.0
+        name: nginx
+        resources:
+          requests:
+            cpu: "20m"
+            memory: "55Mi"
+          limits:
+            cpu: "50m"
+            memory: "100Mi"    
+        ports:
+        - containerPort:  80
+          name:  nginx-port
+      imagePullPolicy: Always
