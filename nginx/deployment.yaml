@@ -16,7 +16,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: glaceroy/nginx:v1.0
+      - image: glaceroy/nginx:v1.1
         name: nginx
         resources:
           requests:
