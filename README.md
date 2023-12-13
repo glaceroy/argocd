@@ -1,3 +1,3 @@
 # argocd
 
-Sample nginx app for argocd
+Sample applications managed by helm charts for argocd
