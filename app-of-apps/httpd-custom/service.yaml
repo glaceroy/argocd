@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpd-custom
+  namespace: nordcloud
+spec:
+  clusterIP: 10.98.249.235
+  clusterIPs:
+  - 10.98.249.235
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 32189
+    port: 8080
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: httpd-custom
+  sessionAffinity: None
+  type: NodePort
