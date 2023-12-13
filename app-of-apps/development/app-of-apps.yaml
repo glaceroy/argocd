@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-of-apps
+  name: dev-app-of-apps
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/glaceroy/argocd.git
     targetRevision: HEAD
-    path: charts/app
+    path: charts/apps
     helm:
       valueFiles:
         - values-dev.yaml

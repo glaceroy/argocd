@@ -1,7 +1,7 @@
 global:
   env: development
   helmDefault: false
-  valuesFile: values.yaml
+  valuesFile: values-dev.yaml
   spec:
     project: development
     destination:
