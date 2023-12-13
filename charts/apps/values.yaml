@@ -1,0 +1,31 @@
+global:
+  env: development
+  helmDefault: false
+  valuesFile: values.yaml
+  spec:
+    project: development
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: development
+    source:
+      repoURL: https://github.com/glaceroy/argocd.git
+      targetRevision: HEAD
+
+argocdApplications:
+  httpd-api:
+    disableAutomated: false
+    disable: false
+    name: httpd-api
+    helm: true
+  nginx-api:
+    disableAutomated: false
+    disable: false
+    name: nginx-api
+    helm: true
+  nodejs-api:
+    disableAutomated: false
+    disable: false
+    name: nodejs-api
+    helm: true
+
+
